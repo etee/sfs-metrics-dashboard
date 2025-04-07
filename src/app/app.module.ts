@@ -1,22 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DevicesComponent } from './features/devices/devices.component';
-import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ConfigService } from './core/services/config.service';
+import { CommonModule } from '@angular/common';
+import { EnvironmentBadgeComponent } from './shared/environment-badge/environment-badge.component';
+import { FormatEnvNamePipe } from './shared/pipes/formatEnvName.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    DevicesComponent
+    EnvironmentBadgeComponent,
+    FormatEnvNamePipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    CommonModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    NgbModule,
   ],
-  providers: [],
+  providers: [ConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
