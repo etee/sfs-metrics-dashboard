@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, catchError, Observable, of } from "rxjs";
-import { environment } from "src/environments/environments";
+import { environment } from "src/environments/environment";
 import { AppConfig } from "src/environments/environment.config";
 import { HttpClient } from "@angular/common/http";
 

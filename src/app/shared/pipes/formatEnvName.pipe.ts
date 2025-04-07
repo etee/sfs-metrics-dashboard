@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 
 export class FormatEnvNamePipe implements PipeTransform {
-    transform(value: any, ...args: any[]) {
+    transform(value: string) {
         if(!value) return '';
         return value.replace(/\[|\]/g, '');
     }
