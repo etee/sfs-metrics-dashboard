@@ -1,7 +1,7 @@
 export const environment = {
-    production: true,
+    production: false,
     apiBaseUrl: 'https://mock-api.assessment.sfsdm.org',
     configUrl: '/config',
-    environmentName: 'PROD',
-    environmentColour: 'red'
+    environmentName: 'Development',
+    environmentColour: 'gray'
 }

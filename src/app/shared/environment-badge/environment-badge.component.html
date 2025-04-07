@@ -1,0 +1,5 @@
+<ng-container *ngIf="environment$ | async as envConfig">
+  <p class="environment-badge" [ngStyle]="{'background-color': envConfig?.environmentColour}">
+    {{envConfig.environmentName | formatEnvName}}
+  </p>
+</ng-container>
