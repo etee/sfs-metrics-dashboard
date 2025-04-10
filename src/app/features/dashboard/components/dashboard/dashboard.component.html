@@ -1,0 +1,61 @@
+<div class="dashboard-container">
+  <app-devices (deviceSelected)="onDeviceSelected($event)"></app-devices>
+
+  <div
+    *ngIf="selectedDevice; else noDeviceSelected"
+    class="device-details container"
+  >
+    <!-- SSE + D3 + Order Info goes here -->
+    <div *ngIf="deviceEvent" class="events-section">
+      <mat-card class="device-events-details">
+        <mat-card-header>
+          <mat-card-title
+            >Status of device {{ deviceEvent.deviceId }}
+            <span class="status-indicator" [ngClass]="deviceEvent.status">
+              {{ deviceEvent.status | titlecase }}
+            </span>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="d-flex">
+          <p>Order ID:</p>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="onOrderClick(deviceEvent.order)"
+            matTooltip="Click to view order details"
+          >
+            {{ deviceEvent.order }}
+          </button>
+        </mat-card-content>
+      </mat-card>
+
+      <div class="d-flex">
+        <app-parts-per-minute-chart
+          [data]="history"
+        ></app-parts-per-minute-chart>
+
+        <app-total-parts-produced-chart
+          [data]="totalProducedHistory"
+        ></app-total-parts-produced-chart>
+      </div>
+
+      <div *ngIf="toggleView">
+        <app-order-production-progress
+          [productionState]="productionState"
+          [productionTarget]="productionTarget"
+        ></app-order-production-progress>
+      </div>
+
+      <div>
+        <app-production-interrupts
+          [interrupts]="interrupts"
+        ></app-production-interrupts>
+      </div>
+    </div>
+  </div>
+  <ng-template #noDeviceSelected>
+    <mat-card class="no-device-selected container">
+      <p>Select a device to view its details.</p>
+    </mat-card>
+  </ng-template>
+</div>

@@ -1,0 +1,13 @@
+<div class="interrupts-container" *ngIf="interrupts.length; else noInterrupts">
+  <h3>Latest Production Interrupts</h3>
+  <ul>
+    <li *ngFor="let interrupt of interrupts | slice : 0 : 5">
+      <strong>{{ interrupt.status.toUpperCase() }}</strong>
+      at {{ formatTime(interrupt.timestamp) }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #noInterrupts>
+  <p>No recent interrupts.</p>
+</ng-template>
