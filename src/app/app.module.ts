@@ -5,12 +5,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ConfigService } from './core/services/config.service';
 import { CommonModule } from '@angular/common';
-import { EnvironmentBadgeComponent } from './shared/environment-badge/environment-badge.component';
+import { EnvironmentBadgeComponent } from './shared/components/environment-badge/environment-badge.component';
 import { FormatEnvNamePipe } from './shared/pipes/formatEnvName.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { LoaderInterceptor } from './core/interceptors/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -26,8 +28,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     MatToolbarModule,
     NgbModule,
+    LoaderComponent
   ],
-  providers: [ConfigService],
+  providers: [
+    ConfigService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

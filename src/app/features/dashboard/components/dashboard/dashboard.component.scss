@@ -1,0 +1,49 @@
+.device-events-details {
+  margin: 20px 0;
+  padding: 16px;
+  background-color: #f5f5f5; /* Light gray background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid #e0e0e0; /* Light border */
+
+  .status-indicator {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 8px;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    &.running::before {
+      background-color: #007a33; /* Green for running */
+    }
+
+    &.stopped::before {
+      background-color: #d32f2f; /* Red for stopped */
+    }
+
+    &.maintenance::before {
+      background-color: #f57c00; /* Orange for maintenance */
+    }
+
+    &.error::before {
+      background-color: #721c24; /* Dark red for error */
+    }
+  }
+  button {
+    border-radius: 4px;
+  }
+}
+.no-device-selected {
+  padding: 16px;
+  background-color: #f5f5f5; /* Light gray background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid #e0e0e0; /* Light border */
+}
