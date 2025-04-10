@@ -1,0 +1,12 @@
+<div *ngIf="devices$ | async as devices; else noDevices" class="device-card-container">
+    <div *ngFor="let device of devices; let i = index">
+        <mat-card class="device-card" appearance="outlined">
+            <mat-card-content (click)="selectedDevice(device)">{{device}}</mat-card-content>
+        </mat-card>
+    </div> 
+</div>
+<ng-template #noDevices>
+    <mat-card class="device-card" appearance="outlined">
+        <mat-card-content>No devices found</mat-card-content>
+    </mat-card>
+</ng-template>

@@ -1,0 +1,12 @@
+<div class="progress-container">
+    <label>Order Progress: {{ productionState }} / {{ productionTarget }}</label>
+    <div class="progress-bar-bg">
+      <div
+        class="progress-bar-fill"
+        [style.width.%]="progress"
+        [attr.aria-valuenow]="progress"
+      ></div>
+    </div>
+    <div class="progress-percent">{{ progress | number: '1.0-0' }}%</div>
+  </div>
+  
