@@ -10,6 +10,7 @@ import { TotalPartsProducedChartComponent } from 'src/app/shared/components/tota
 import { OrderProductionProgressComponent } from 'src/app/shared/components/order-production-progress/order-production-progress.component';
 import { ProductionInterruptsComponent } from 'src/app/shared/components/production-interrupts/production-interrupts.component';
 import { PartsPerMinuteChartComponent } from 'src/app/shared/components/parts-per-minute-chart/parts-per-minute-chart.component.spec';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [DashboardComponent, DevicesComponent],
@@ -22,7 +23,8 @@ import { PartsPerMinuteChartComponent } from 'src/app/shared/components/parts-pe
     PartsPerMinuteChartComponent,
     TotalPartsProducedChartComponent,
     OrderProductionProgressComponent,
-    ProductionInterruptsComponent
+    ProductionInterruptsComponent,
+    TranslateModule
   ],
 })
 export class DashboardModule {}
