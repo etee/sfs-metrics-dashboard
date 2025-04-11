@@ -37,7 +37,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatToolbarModule,
     MatSnackBarModule,
     NgbModule,
-    LoaderComponent
+    LoaderComponent,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     ConfigService,

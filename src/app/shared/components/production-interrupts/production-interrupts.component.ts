@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 export interface InterruptEvent {
   timestamp: number;
@@ -10,7 +11,7 @@ export interface InterruptEvent {
 @Component({
   selector: 'app-production-interrupts',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './production-interrupts.component.html',
   styleUrls: ['./production-interrupts.component.scss']
 })
