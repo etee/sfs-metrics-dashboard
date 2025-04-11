@@ -1,5 +1,5 @@
 <div class="interrupts-container" *ngIf="interrupts.length; else noInterrupts">
-  <h3>Latest Production Interrupts</h3>
+  <h3>{{'INTERRUPTS' | translate}}</h3>
   <ul>
     <li *ngFor="let interrupt of interrupts | slice : 0 : 5">
       <strong>{{ interrupt.status.toUpperCase() }}</strong>
@@ -9,5 +9,5 @@
 </div>
 
 <ng-template #noInterrupts>
-  <p>No recent interrupts.</p>
+  <p>{{'NO_INTERRUPTS' | translate}}</p>
 </ng-template>

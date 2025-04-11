@@ -1,0 +1,12 @@
+{
+  "SFS_TITLE": "SFS Metriken Armaturenbrett",
+  "DASHBOARD": "Armaturenbrett",
+  "STATUS_OF_DEVICE": "Status des Geräts",
+  "INTERRUPTS": "Letzte Unterbrechungen",
+  "ORDER_ID": "Bestell-ID",
+  "VIEW_ORDER_DETAILS": "Klicken Sie hier, um die Bestelldetails anzuzeigen",
+  "SELECTED_DEVICE_DETAILS": "Wählen Sie ein Gerät aus, um seine Details anzuzeigen.",
+  "NO_DEVICE_FOUND": "Kein Gerät gefunden.",
+  "ORDER_PROGRESS": "Bestellfortschritt",
+  "NO_INTERRUPTS": "Keine aktuellen Unterbrechungen"
+}

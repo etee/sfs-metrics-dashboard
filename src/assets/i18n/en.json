@@ -1,0 +1,12 @@
+{
+  "SFS_TITLE": "SFS Metrics Dashboard",
+  "DASHBOARD": "Dashboard",
+  "STATUS_OF_DEVICE": "Status of device",
+  "INTERRUPTS": "Latest Interrupts",
+  "ORDER_ID": "Order ID",
+  "VIEW_ORDER_DETAILS": "Click to view order details",
+  "SELECTED_DEVICE_DETAILS": "Select a device to view its details.",
+  "NO_DEVICE_FOUND": "No device found.",
+  "ORDER_PROGRESS": "Order Progress",
+  "NO_INTERRUPTS": "No recent interrupts"
+}
